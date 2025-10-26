@@ -1,0 +1,34 @@
+name: Run Forum Bot
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🧰 Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser chromium-driver xvfb
+          pip install selenium
+
+      - name: 🚀 Run bot
+        run: |
+          xvfb-run --auto-servernum python3 main.py
+
+      - name: 📅 Set current date
+        id: set_date
+        run: echo "date=$(date +'%Y-%m-%d')" >> "$GITHUB_OUTPUT"
+
+      - name: Upload logs and debug page
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-log-${{ steps.date.outputs.today }}
+          path: |
+            log.txt
+            visited_today.csv
+            last_error_page.html

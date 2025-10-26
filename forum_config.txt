@@ -1,0 +1,5 @@
+[domain.name]
+login = your_login
+password = 1111
+reply_text = message number one|||message number two
+limit = 0 #currently has no active limit, put the number to limit amount of posts.
