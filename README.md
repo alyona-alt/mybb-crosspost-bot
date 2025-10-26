@@ -1,23 +1,33 @@
 # MyBB PR Automation
 
-> End-to-end automation script for reciprocal post exchanges between MyBB forums.  
-> The bot authenticates on multiple sites, extracts and reposts PR content, detects partner activity, and records results automatically.  
-> Includes CSV and Google Sheets synchronization, error handling, and configurable forum-specific logic.
+![Python](https://img.shields.io/badge/Python-3.10+-blue) ![Selenium](https://img.shields.io/badge/Selenium-Automation-green) ![Google%20Apps%20Script](https://img.shields.io/badge/Google%20Apps%20Script-Integration-orange) ![GitHub%20Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-blueviolet)
+
+> End-to-end automation bot for reciprocal post exchanges between MyBB forums.
+
+> Logs in, extracts and reposts ad content, tracks partner activity, and handles configurable forum logic with error reporting.
 
 ---
 
-## ⚙️ Features
-- Automatic login and session handling across partner forums  
-- Ad extraction and reposting with dynamic topic detection  
-- Google Sheets integration for progress tracking  
-- Detailed logging and per-forum configuration  
-- Robust error handling and resume logic  
-- YAML workflow for CI-based runs
+## ⚙️ Key Features
+- Multi-forum login & posting automation  
+- Dynamic ad-topic detection and reposting  
+- Configurable forum settings & posting limits  
+- Input from **Google Sheet or local list**  
+- GitHub Actions workflow for manual or scheduled runs
 
 ---
 
-## 🧩 Automation via GitHub Actions
-This repository includes a **`run-bot.yml`** workflow that runs the bot in GitHub Actions.  
-You can:
-- **Run manually** via “Run workflow”  
-- Or add a **schedule** for automatic execution (e.g., once per day)
+## 🧩 Google Sheets & Script
+The bot can read target forums directly from a connected Google Sheet.  
+A companion script — **`mybb-forum-scanner.gs`** — scans listed forums for new ad threads and updates the sheet automatically.  
+It detects relevant topics by keywords (in ru) and highlights new ones for posting.
+
+---
+
+## 🧱 Stack
+Python · Selenium · Google Apps Script · GitHub Actions
+
+---
+
+## 📝 License
+MIT — free to use and modify.
