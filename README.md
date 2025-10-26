@@ -19,7 +19,7 @@
 
 ## 🧩 Google Sheets & Script
 The bot can read target forums directly from a connected Google Sheet.  
-A companion script — **`mybb-forum-scanner.gs`** — scans listed forums for new ad threads and updates the sheet automatically.  
+A companion script **`mybb-forum-scanner.gs`**  scans listed forums for new ad threads and updates the sheet automatically.  
 It detects relevant topics by keywords (in ru) and highlights new ones for posting.
 
 ---
